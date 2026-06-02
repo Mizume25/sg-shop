@@ -1,20 +1,26 @@
-<!-- Layout -->
-<script setup lang="ts">
-definePageMeta({ layout: 'hub-layout' })
-</script>
 
+<script setup>
+definePageMeta({
+  layout: 'hub-layout'
+})
+</script>
 <template>
-    <div class="w-[300px] h-[200px] border-black flex flex-col items-center justify-center gap-3">
-        <UButton to="/home/dashboard" variant="solid" color="error" size="xl"
-            class="w-[200px] justify-center text-white hover:scale-110 transition-transform duration-300 ease-in-out"
-            icon="lucide:shopping-cart">
-            Sg-Shop
+    <div class="flex flex-col items-center justify-center gap-4">
+        <UButton 
+        variant="solid" 
+        color="error" 
+        class="w-[160px] h-[60px] text-[25px] text-white font-blod p-4 text-center  transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
+        icon="lucide:shopping-cart">
+            SG-shop
         </UButton>
 
-        <UButton to="/test/menu" variant="solid" color="primary" size="xl"
-            class="w-[200px] justify-center text-white hover:scale-110 transition-transform duration-300 ease-in-out"
-            icon="lucide:book">
-            Prácticas
+        <UButton 
+        to="/test"
+        variant="solid" 
+        color="primary" 
+        class="w-[160px] h-[60px] text-[25px] text-white font-blod p-4 text-center transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
+        icon="lucide-book">
+            Practicas
         </UButton>
     </div>
 </template>

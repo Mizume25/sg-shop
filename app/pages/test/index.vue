@@ -1,35 +1,36 @@
-<!--Layouts -->
 <script setup lang="ts">
 definePageMeta({ layout: 'hub-layout' })
 
-
-/** Iteraremos buttons */
-interface PracticeItem {
-    id: number
-    to: string,
+/** Numeracion de páginas */
+interface FieldItem {
+    id: number;
+    to: string;
 }
-/** Iteramos contenido */
-const items : PracticeItem[] = [
-    {id: 1 , to:'/test/1'},
-    {id: 2, to:'/test/2'}
-]
 
+/** Integrar campos */
+const items: FieldItem[] = [
+    { id: 1, to: "/test/pr1" },
+    { id: 2, to: "/test/pr2" },
+    { id: 3, to: "/test/pr3" }
+]
 </script>
 
 <template>
-    <div class="w-[300px] h-[200px] border-black flex flex-col items-center justify-center gap-3">
-        <!--  Contenido iterado -->
+     <div class="flex flex-col items-center justify-center gap-4">
         <UButton 
         v-for="item in items"
-        :to="item.to"
         :key="item.id"
+        :to="item.to"
         variant="solid" 
         color="primary" 
-        size="xl"
-        class="w-[200px] justify-center text-white hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer"
-        icon="lucide:book">
-            Practica {{item.id }}
+        class="w-[180px] h-[60px] text-[25px] text-white font-blod p-4 text-center transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
+        icon="lucide-book">
+            Practicas {{ item.id }}
         </UButton>
-        
     </div>
 </template>
+
+
+<style scoped>
+
+</style>
