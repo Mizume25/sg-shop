@@ -7,7 +7,6 @@ const colores = ['red', 'yellow', 'green']
 let index = ref(0);
 
 /** Cambio de color */
-
 onMounted(() => {
     setInterval(() => {
         index.value = (index.value + 1) % colores.length

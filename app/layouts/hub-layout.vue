@@ -7,7 +7,7 @@
         </h1>
 
         <!--- Contenedor de Rutas-->
-        <main class="border border-black w-[350px] h-[250px] rounded-xl bg-white animate-fillIn flexeado">
+        <main class="border border-black w-[350px] min-h-[250px] rounded-xl bg-white animate-fillIn flexeado p-6">
 
             <slot />
 
