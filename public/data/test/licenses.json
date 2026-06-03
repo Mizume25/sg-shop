@@ -1,0 +1,350 @@
+[
+  {
+    "id": 1,
+    "name": "Carlos Martínez",
+    "age": 34,
+    "birthDate": "1991-03-15",
+    "nationality": "ES",
+    "idNumber": "47382910B",
+    "contact": {
+      "email": "carlos.martinez@gmail.com",
+      "phone": "+34 612 345 678"
+    },
+    "address": {
+      "street": "Carrer de Mallorca",
+      "number": 142,
+      "floor": "3B",
+      "city": "Barcelona",
+      "region": "Cataluña",
+      "zipCode": "08036",
+      "country": "ES"
+    },
+    "drivingLicense": {
+      "type": "B",
+      "yearObtained": 2010,
+      "expirationDate": "2030-03-15",
+      "restrictions": [],
+      "points": 12,
+      "suspensions": []
+    }
+  },
+  {
+    "id": 2,
+    "name": "Sophie Dubois",
+    "age": 28,
+    "birthDate": "1997-07-22",
+    "nationality": "FR",
+    "idNumber": "FR-293847561",
+    "contact": {
+      "email": "sophie.dubois@laposte.fr",
+      "phone": "+33 6 12 34 56 78"
+    },
+    "address": {
+      "street": "Rue de Rivoli",
+      "number": 45,
+      "floor": "2A",
+      "city": "Paris",
+      "region": "Île-de-France",
+      "zipCode": "75001",
+      "country": "FR"
+    },
+    "drivingLicense": {
+      "type": "A",
+      "yearObtained": 2018,
+      "expirationDate": "2028-07-22",
+      "restrictions": ["gafas"],
+      "points": 10,
+      "suspensions": []
+    }
+  },
+  {
+    "id": 3,
+    "name": "Luca Bianchi",
+    "age": 45,
+    "birthDate": "1980-11-03",
+    "nationality": "IT",
+    "idNumber": "IT-AB1234567",
+    "contact": {
+      "email": "luca.bianchi@gmail.it",
+      "phone": "+39 333 123 4567"
+    },
+    "address": {
+      "street": "Via Roma",
+      "number": 88,
+      "floor": "1C",
+      "city": "Milano",
+      "region": "Lombardia",
+      "zipCode": "20121",
+      "country": "IT"
+    },
+    "drivingLicense": {
+      "type": "C",
+      "yearObtained": 2001,
+      "expirationDate": "2026-11-03",
+      "restrictions": [],
+      "points": 6,
+      "suspensions": [
+        {
+          "reason": "Conducción bajo efectos del alcohol",
+          "date": "2020-08-14",
+          "durationDays": 90
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Anna Müller",
+    "age": 31,
+    "birthDate": "1994-02-17",
+    "nationality": "DE",
+    "idNumber": "DE-987654321",
+    "contact": {
+      "email": "anna.muller@web.de",
+      "phone": "+49 151 2345 6789"
+    },
+    "address": {
+      "street": "Hauptstraße",
+      "number": 12,
+      "floor": "4D",
+      "city": "Berlin",
+      "region": "Berlín",
+      "zipCode": "10115",
+      "country": "DE"
+    },
+    "drivingLicense": {
+      "type": "B",
+      "yearObtained": 2013,
+      "expirationDate": "2033-02-17",
+      "restrictions": ["lentes"],
+      "points": 12,
+      "suspensions": []
+    }
+  },
+  {
+    "id": 5,
+    "name": "James O'Brien",
+    "age": 52,
+    "birthDate": "1973-05-09",
+    "nationality": "IE",
+    "idNumber": "IE-112233445",
+    "contact": {
+      "email": "james.obrien@eircom.ie",
+      "phone": "+353 87 123 4567"
+    },
+    "address": {
+      "street": "O'Connell Street",
+      "number": 7,
+      "floor": "PB",
+      "city": "Dublin",
+      "region": "Leinster",
+      "zipCode": "D01 F5P2",
+      "country": "IE"
+    },
+    "drivingLicense": {
+      "type": "D",
+      "yearObtained": 1995,
+      "expirationDate": "2027-05-09",
+      "restrictions": [],
+      "points": 8,
+      "suspensions": [
+        {
+          "reason": "Exceso de velocidad",
+          "date": "2015-03-22",
+          "durationDays": 15
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "name": "Yuki Tanaka",
+    "age": 26,
+    "birthDate": "1999-09-30",
+    "nationality": "JP",
+    "idNumber": "JP-556677889",
+    "contact": {
+      "email": "yuki.tanaka@docomo.ne.jp",
+      "phone": "+81 90-1234-5678"
+    },
+    "address": {
+      "street": "Shibuya-ku Dogenzaka",
+      "number": 3,
+      "floor": "7F",
+      "city": "Tokyo",
+      "region": "Kanto",
+      "zipCode": "150-0043",
+      "country": "JP"
+    },
+    "drivingLicense": {
+      "type": "B",
+      "yearObtained": 2020,
+      "expirationDate": "2030-09-30",
+      "restrictions": ["automático"],
+      "points": 12,
+      "suspensions": []
+    }
+  },
+  {
+    "id": 7,
+    "name": "Amara Diallo",
+    "age": 38,
+    "birthDate": "1987-12-01",
+    "nationality": "SN",
+    "idNumber": "SN-334455667",
+    "contact": {
+      "email": "amara.diallo@orange.sn",
+      "phone": "+221 77 123 45 67"
+    },
+    "address": {
+      "street": "Avenue Cheikh Anta Diop",
+      "number": 21,
+      "floor": "PB",
+      "city": "Dakar",
+      "region": "Dakar",
+      "zipCode": "BP 5005",
+      "country": "SN"
+    },
+    "drivingLicense": {
+      "type": "B",
+      "yearObtained": 2008,
+      "expirationDate": "2028-12-01",
+      "restrictions": [],
+      "points": 10,
+      "suspensions": []
+    }
+  },
+  {
+    "id": 8,
+    "name": "Elena Popescu",
+    "age": 41,
+    "birthDate": "1984-04-25",
+    "nationality": "RO",
+    "idNumber": "RO-778899001",
+    "contact": {
+      "email": "elena.popescu@yahoo.ro",
+      "phone": "+40 721 234 567"
+    },
+    "address": {
+      "street": "Calea Victoriei",
+      "number": 55,
+      "floor": "2B",
+      "city": "București",
+      "region": "Muntenia",
+      "zipCode": "010063",
+      "country": "RO"
+    },
+    "drivingLicense": {
+      "type": "B",
+      "yearObtained": 2004,
+      "expirationDate": "2024-04-25",
+      "restrictions": ["gafas"],
+      "points": 4,
+      "suspensions": [
+        {
+          "reason": "Semáforo en rojo",
+          "date": "2022-01-10",
+          "durationDays": 45
+        },
+        {
+          "reason": "Exceso de velocidad",
+          "date": "2023-07-19",
+          "durationDays": 20
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "name": "Mohamed Al-Rashid",
+    "age": 47,
+    "birthDate": "1978-08-11",
+    "nationality": "AE",
+    "idNumber": "AE-223344556",
+    "contact": {
+      "email": "m.alrashid@emirates.ae",
+      "phone": "+971 50 123 4567"
+    },
+    "address": {
+      "street": "Sheikh Zayed Road",
+      "number": 101,
+      "floor": "15F",
+      "city": "Dubai",
+      "region": "Dubai",
+      "zipCode": "00000",
+      "country": "AE"
+    },
+    "drivingLicense": {
+      "type": "B",
+      "yearObtained": 1999,
+      "expirationDate": "2029-08-11",
+      "restrictions": [],
+      "points": 12,
+      "suspensions": []
+    }
+  },
+  {
+    "id": 10,
+    "name": "Isabella García",
+    "age": 23,
+    "birthDate": "2002-01-14",
+    "nationality": "MX",
+    "idNumber": "MX-445566778",
+    "contact": {
+      "email": "isa.garcia@hotmail.mx",
+      "phone": "+52 55 1234 5678"
+    },
+    "address": {
+      "street": "Avenida Insurgentes Sur",
+      "number": 300,
+      "floor": "1A",
+      "city": "Ciudad de México",
+      "region": "CDMX",
+      "zipCode": "06600",
+      "country": "MX"
+    },
+    "drivingLicense": {
+      "type": "B",
+      "yearObtained": 2022,
+      "expirationDate": "2032-01-14",
+      "restrictions": [],
+      "points": 12,
+      "suspensions": []
+    }
+  },
+  {
+    "id": 11,
+    "name": "Pieter van der Berg",
+    "age": 59,
+    "birthDate": "1966-06-30",
+    "nationality": "NL",
+    "idNumber": "NL-667788990",
+    "contact": {
+      "email": "pieter.vdberg@ziggo.nl",
+      "phone": "+31 6 12345678"
+    },
+    "address": {
+      "street": "Herengracht",
+      "number": 401,
+      "floor": "PB",
+      "city": "Amsterdam",
+      "region": "Noord-Holland",
+      "zipCode": "1017 BP",
+      "country": "NL"
+    },
+    "drivingLicense": {
+      "type": "C",
+      "yearObtained": 1987,
+      "expirationDate": "2026-06-30",
+      "restrictions": ["audífono"],
+      "points": 9,
+      "suspensions": [
+        {
+          "reason": "Conducción temeraria",
+          "date": "2010-11-05",
+          "durationDays": 60
+        }
+      ]
+    }
+  }
+]

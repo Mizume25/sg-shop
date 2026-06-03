@@ -173,6 +173,8 @@ const renderColor = (type: string): string => {
     }
 }
 
+
+
 /** Categorias de las tareas */
 const category: Ref<string[]> = ref(['estudio', 'compra', 'ejercicio', 'ocio'])
 
