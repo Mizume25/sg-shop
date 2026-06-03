@@ -25,10 +25,25 @@
   animation: fillIn 0.9s ease-in-out forwards;
 }
 
+@utility animate-fillIn-top {
+  animation: fillIn-top 1.9s ease-in-out forwards;
+}
+
 @keyframes fillIn {
   from { 
     opacity: 0; 
     transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fillIn-top {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
   }
   to { 
     opacity: 1; 

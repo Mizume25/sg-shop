@@ -3,17 +3,18 @@ definePageMeta({ layout: 'hub-layout' })
 
 /** Numeracion de páginas */
 interface FieldItem {
-    id: number;
-    to: string;
+    id: number,
+    to: string,
+    label:string,
+    color:string,
+    icon:string
 }
 
 /** Integrar campos */
 const items: FieldItem[] = [
-    { id: 1, to: "/test/pr1" },
-    { id: 2, to: "/test/pr2" },
-    { id: 3, to: "/test/pr3" },
-    { id: 4, to: "/test/pr4" },
-    { id: 5, to: "" }
+    { id: 1, to: "/test/core/" ,label: "core", color:"error" , icon:"lucide:book"},
+    { id: 2, to: "/test/data", label: "data" , color:"info", icon:"lucide:database"},
+    { id: 3, to: "/test/api/", label: "api" , color:"warning", icon:"lucide:network"}
 ]
 </script>
 
@@ -24,10 +25,10 @@ const items: FieldItem[] = [
         :key="item.id"
         :to="item.to"
         variant="solid" 
-        color="primary" 
-        class="w-[180px] h-[60px] text-[25px] text-white font-blod p-4 text-center transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
-        icon="lucide-book">
-            Practicas {{ item.id }}
+        :color="item.color as any" 
+        class="w-[180px] h-[60px] text-[25px] text-white font-bold p-4 text-center transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer capitalize"  
+        :icon="item.icon">
+            {{ item.label }}
         </UButton>
     </div>
 </template>

@@ -3,7 +3,7 @@
 /** Iteracion de colores */
 const colores = ['red', 'yellow', 'green']
 
-
+/** Indice de referencia */
 let index = ref(0);
 
 /** Cambio de color */

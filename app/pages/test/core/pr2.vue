@@ -1,4 +1,11 @@
 <script setup lang="ts">
+/**
+ * @description  Ejercicio 2 - Input a Tiempo real
+ * Obetivo
+ * - Practicar a tiempo rel una variable ractiva
+ * - Practicar varaible reactiva ref
+ * 
+ */
 const input = ref('')
 
 watch(input, (val) => {
