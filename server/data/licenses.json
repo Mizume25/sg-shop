@@ -24,8 +24,7 @@
       "yearObtained": 2010,
       "expirationDate": "2030-03-15",
       "restrictions": [],
-      "points": 12,
-      "suspensions": []
+      "points": 12
     }
   },
   {
@@ -53,8 +52,7 @@
       "yearObtained": 2018,
       "expirationDate": "2028-07-22",
       "restrictions": ["gafas"],
-      "points": 10,
-      "suspensions": []
+      "points": 10
     }
   },
   {
@@ -82,14 +80,7 @@
       "yearObtained": 2001,
       "expirationDate": "2026-11-03",
       "restrictions": [],
-      "points": 6,
-      "suspensions": [
-        {
-          "reason": "Conducción bajo efectos del alcohol",
-          "date": "2020-08-14",
-          "durationDays": 90
-        }
-      ]
+      "points": 6
     }
   },
   {
@@ -117,8 +108,7 @@
       "yearObtained": 2013,
       "expirationDate": "2033-02-17",
       "restrictions": ["lentes"],
-      "points": 12,
-      "suspensions": []
+      "points": 12
     }
   },
   {
@@ -146,14 +136,7 @@
       "yearObtained": 1995,
       "expirationDate": "2027-05-09",
       "restrictions": [],
-      "points": 8,
-      "suspensions": [
-        {
-          "reason": "Exceso de velocidad",
-          "date": "2015-03-22",
-          "durationDays": 15
-        }
-      ]
+      "points": 8
     }
   },
   {
@@ -181,8 +164,8 @@
       "yearObtained": 2020,
       "expirationDate": "2030-09-30",
       "restrictions": ["automático"],
-      "points": 12,
-      "suspensions": []
+      "points": 12
+
     }
   },
   {
@@ -210,8 +193,8 @@
       "yearObtained": 2008,
       "expirationDate": "2028-12-01",
       "restrictions": [],
-      "points": 10,
-      "suspensions": []
+      "points": 10
+     
     }
   },
   {
@@ -239,19 +222,7 @@
       "yearObtained": 2004,
       "expirationDate": "2024-04-25",
       "restrictions": ["gafas"],
-      "points": 4,
-      "suspensions": [
-        {
-          "reason": "Semáforo en rojo",
-          "date": "2022-01-10",
-          "durationDays": 45
-        },
-        {
-          "reason": "Exceso de velocidad",
-          "date": "2023-07-19",
-          "durationDays": 20
-        }
-      ]
+      "points": 4
     }
   },
   {
@@ -279,8 +250,7 @@
       "yearObtained": 1999,
       "expirationDate": "2029-08-11",
       "restrictions": [],
-      "points": 12,
-      "suspensions": []
+      "points": 12
     }
   },
   {
@@ -308,8 +278,7 @@
       "yearObtained": 2022,
       "expirationDate": "2032-01-14",
       "restrictions": [],
-      "points": 12,
-      "suspensions": []
+      "points": 12
     }
   },
   {
@@ -337,14 +306,7 @@
       "yearObtained": 1987,
       "expirationDate": "2026-06-30",
       "restrictions": ["audífono"],
-      "points": 9,
-      "suspensions": [
-        {
-          "reason": "Conducción temeraria",
-          "date": "2010-11-05",
-          "durationDays": 60
-        }
-      ]
+      "points": 9
     }
   }
 ]

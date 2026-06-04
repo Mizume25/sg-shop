@@ -14,11 +14,6 @@
   --color-primary-800: #065f46;
   --color-primary-900: #064e3b;
   --color-primary-950: #022c22;
-
-  /* Fuente */
-  --font-sans: "Segoe UI", ui-sans-ser
-  
-  if, system-ui, sans-serif;
 }
 
 @utility animate-fillIn {

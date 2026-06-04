@@ -1,159 +1,308 @@
 <template>
-    <div class="bg-[#f7f9fb] text-[#191c1e]">
- 
-  <main class="min-h-screen pb-24 px-4 pt-8 max-w-5xl mx-auto">
-    <div class="rounded-2xl shadow-sm p-6 md:p-8 bg-[#fff5e6] border border-[#cdc5bb]/40">
- 
-      <!-- Profile Header -->
-      <div class="flex flex-col items-center mb-10">
-        <div class="w-32 h-32 rounded-full flex items-center justify-center border-4 border-white shadow-md mb-4 overflow-hidden hover:scale-105 transition-transform bg-white">
-          <span class="material-symbols-outlined icon-thin text-[#645e52]"></span>
-        </div>
-        <h2 class="text-3xl font-bold text-[#645e52] text-center tracking-tight">Carlos Martínez</h2>
-        <div class="mt-3 flex items-center gap-2 px-4 py-1.5 rounded-full shadow-sm bg-white/60 border border-[#cdc5bb]/30">
-          <span class="material-symbols-outlined icon-fill text-sm text-[#645e52]">Verified</span>
-          <span class="text-xs font-bold tracking-widest uppercase text-[#767064]">ACTIVE OPERATOR</span>
-        </div>
-      </div>
- 
-      <!-- 2 Column Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
- 
-        <!-- Left Column -->
-        <div class="space-y-6">
- 
-          <!-- Personal -->
-          <div class="p-5 rounded-xl space-y-4 shadow-sm bg-white/40 border border-[#cdc5bb]/30">
-            <h3 class="text-xs font-bold tracking-widest uppercase text-[#645e52] opacity-60 pb-2 border-b border-[#cdc5bb]/20">
-              Personal Information
-            </h3>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <span class="u-label">Age</span>
-                <span class="u-value">34 Years</span>
-              </div>
-              <div>
-                <span class="u-label">Nationality</span>
-                <span class="u-value flex items-center gap-2">
-                  Spain <span class="material-symbols-outlined text-xs">flag</span>
-                </span>
-              </div>
-            </div>
-            <div>
-              <span class="u-label">Identification Number</span>
-              <span class="u-value tracking-widest">47382910B</span>
-            </div>
-          </div>
- 
-          <!-- Contact -->
-          <div class="p-5 rounded-xl space-y-4 shadow-sm bg-white/40 border border-[#cdc5bb]/30">
-            <h3 class="text-xs font-bold tracking-widest uppercase text-[#645e52] opacity-60 pb-2 border-b border-[#cdc5bb]/20">
-              Contact Details
-            </h3>
-            <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined mt-1 text-[#645e52]">mail</span>
-              <div>
-                <span class="u-label">Email Address</span>
-                <span class="u-value text-[#645e52]">carlos.martinez@gmail.com</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined mt-1 text-[#645e52]">call</span>
-              <div>
-                <span class="u-label">Phone Number</span>
-                <span class="u-value">+34 612 345 678</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined mt-1 text-[#645e52]">location_on</span>
-              <div>
-                <span class="u-label">Residential Address</span>
-                <address class="u-value not-italic text-sm leading-relaxed">
-                  Carrer de Mallorca 142, Floor 3B<br/>
-                  08036 Barcelona, Cataluña, ES
-                </address>
-              </div>
-            </div>
-          </div>
-        </div>
- 
-        <!-- Right Column -->
-        <div class="space-y-6">
-          <div class="p-5 rounded-xl space-y-4 shadow-sm h-full bg-white/40 border border-[#cdc5bb]/30">
-            <h3 class="flex justify-between items-center text-xs font-bold tracking-widest uppercase text-[#645e52] opacity-60 pb-2 border-b border-[#cdc5bb]/20">
-              Driving Licence
-              <span class="material-symbols-outlined text-sm">badge</span>
-            </h3>
-            <div class="grid grid-cols-2 gap-y-5 gap-x-4">
-              <div>
-                <span class="u-label">Type</span>
-                <span class="u-value text-lg font-bold">Class B</span>
-              </div>
-              <div>
-                <span class="u-label">Current Points</span>
-                <span class="u-value text-lg flex items-center gap-1 text-[#645e52]">
-                  <span class="material-symbols-outlined icon-fill">stars</span> 12
-                </span>
-              </div>
-              <div>
-                <span class="u-label">Date Obtained</span>
-                <span class="u-value">May 2010</span>
-              </div>
-              <div>
-                <span class="u-label">Expiry Date</span>
-                <span class="u-value">2030-03-15</span>
-              </div>
-            </div>
- 
-            <!-- Suspension -->
-            <div class="mt-6 pt-6 border-t border-[#cdc5bb]/20">
-              <div class="p-4 rounded-lg bg-[#ffdad6]/40 border border-[#ba1a1a]/10">
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="material-symbols-outlined text-xl text-[#ba1a1a]">warning</span>
-                  <h4 class="text-xs font-bold tracking-widest uppercase text-[#93000a]">SUSPENSION HISTORY</h4>
-                </div>
-                <div class="p-3 rounded-lg bg-white/50 border border-[#ba1a1a]/5">
-                  <div class="flex justify-between items-start mb-2">
-                    <span class="u-value text-sm font-bold text-[#93000a]">Speeding Infraction</span>
-                    <span class="text-[9px] font-bold tracking-widest uppercase bg-[#ba1a1a]/10 text-[#ba1a1a] px-2 py-0.5 rounded border border-[#ba1a1a]/10">EXPIRED</span>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2">
-                    <div>
-                      <span class="u-label" >Date</span>
-                      <span class="u-value text-xs">2019-06-01</span>
-                    </div>
-                    <div>
-                      <span class="u-label" >Duration</span>
-                      <span class="u-value text-xs">30 Days</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- Actions -->
-      <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-        <button class="w-full md:w-auto px-10 py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] bg-[#595f66] hover:bg-[#191c1e] text-white text-lg font-semibold">
-          <span class="material-symbols-outlined text-[20px]">edit</span>
-          Modify Records
-        </button>
-        <button class="w-full md:w-auto px-10 py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98] bg-white hover:bg-[#f2f4f6] text-[#595f66] text-lg font-semibold border border-[#cdc5bb]/50">
-          <span class="material-symbols-outlined text-[20px]">print</span>
-          Export Report
-        </button>
-      </div>
-    </div>
-  </main>
+  <div class="bg-[#e8dcc8] text-[#191c1e]">
 
- 
-</div>
+    <main class="min-h-screen pb-24 px-4 pt-8 max-w-5xl mx-auto">
+      <nav class="fixed top-0 left-0 right-0 z-50 mx-auto max-w-5xl px-4 pt-3">
+        <div class="bg-[#3a3020] rounded-xl px-5 h-14 flex items-center justify-between">
+
+          <!-- logo -->
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#d4a017]/20 flex items-center justify-center">
+              <UIcon name="lucide:network" class="text-white"></UIcon>
+            </div>
+            <span class="text-[#ece5d8] font-medium text-sm">Api Rest</span>
+          </div>
+
+          <!-- nav links -->
+          <div class="flex items-center gap-1">
+            <UButton v-for="(item, index) in nav" class="text-black px-3 py-1.5 rounded-lg text-xs cursor-pointer mx-1"
+              :key="index" :color="item.color" :icon="item.icon" @click="selectNav(index)">
+
+              {{ item.label }}
+
+            </UButton>
+
+
+          </div>
+
+          <!-- user -->
+          <div class="flex items-center gap-2 bg-[#d4a017]/15 pl-1 pr-3 py-1 rounded-full cursor-pointer">
+            <div class="w-7 h-7 rounded-full bg-[#d4a017] flex items-center justify-center">
+              <UIcon name="lucide:car" />
+            </div>
+            <span class="text-[#ece5d8] text-xs">Drive License Api </span>
+            <i class="ti ti-chevron-down text-[#c8bba0] text-xs"></i>
+          </div>
+
+        </div>
+      </nav>
+
+
+      <div class="flex justify-center  mt-10 mb-4 fixed top-10 left-60 right-60 z-20" v-show="actions.show">
+        <USelect :items="ListNames" size="xl" class="w-full cursor-pointer" v-model="selectedName" />
+      </div>
+
+
+
+
+      <!-- Container grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-15 ">
+
+        <!-- Inicio de Card -->
+        <div class="w-full rounded-xl border border-warm-600/40 overflow-hidden bg-[#e7b13c] text-sm p-6"
+          :class="actions.show ? 'mt-15' : ''" v-show="actions.index || actions.show"
+          v-for="(lic, index) in viewLicense" :key="lic.id">
+
+          <!-- Foto de Perfil-->
+          <div class="px-5 py-5 text-center ">
+            <div
+              class="w-16 h-16 rounded-full bg-white border border-warm-600/30 flex items-center justify-center mx-auto mb-3">
+              <UIcon size='xl' class="text-black text-[40px]" name="lucide:user" />
+            </div>
+            <!-- Nombre del empleado -->
+            <p class="font-medium text-base text-muted-600">{{ lic.name }}</p>
+
+            <!-- Tag -->
+            <span
+              class="inline-flex items-center gap-1 mt-2 px-3 py-0.5 rounded-full bg-white/70 border border-black text-[10px] font-semibold tracking-widest uppercase text-muted-700">
+              <UIcon name="lucide:car"></UIcon> Active operator {{ lic.id }}
+            </span>
+          </div>
+
+
+          <!-- Datos Personales -->
+          <div class="px-5 py-4 border border-black rounded-2xl shadow-xl bg-[#e0c58a] mb-3">
+            <p class="text-[10px] font-bold tracking-widest uppercase text-muted-600/60 mb-3">Personal Date</p>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+              <div>
+                <p class="text-[11px] text-muted-600/60">Age</p>
+                <p class="font-medium text-muted-600">{{ lic.age }} years</p>
+              </div>
+              <div>
+                <p class="text-[11px] text-muted-600/60">Nationality</p>
+
+                <p class="font-medium text-muted-600">{{ lic.nationality }} - {{ getCountryName(lic.nationality) }}</p>
+              </div>
+              <div class="col-span-2">
+                <p class="text-[11px] text-muted-600/60">ID number</p>
+                <p class="font-medium tracking-wider text-muted-600">{{ lic.idNumber }}</p>
+              </div>
+            </div>
+          </div>
+          <!-- Contacto-->
+          <div class="px-5 py-4 border border-black rounded-2xl shadow-xl bg-[#e0c58a] mb-3">
+            <p class="text-[10px] font-bold tracking-widest uppercase text-muted-600/60 mb-3">Contact</p>
+            <div class="space-y-2.5">
+              <div class="flex items-center gap-2.5">
+                <UIcon name="lucide:mail" />
+                <span class="text-xs text-muted-600">{{ lic.contact.email }}</span>
+
+              </div>
+              <div class="flex items-center gap-2.5">
+                <UIcon name="lucide:phone" />
+                <span class="text-xs text-muted-600">{{ lic.contact.phone }}</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <UIcon name="lucide:locate-fixed" />
+                <span class="text-xs text-muted-600 leading-relaxed">{{ Object.values(lic.address).join(' ') }}</span>
+              </div>
+            </div>
+          </div>
+          <!--- Licencia de conducir -->
+          <div class="px-5 py-4 border border-black rounded-2xl shadow-xl bg-[#e0c58a]">
+            <p class="text-[10px] font-bold tracking-widest uppercase text-muted-600/60 mb-3">Driving licence</p>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+              <div>
+                <p class="text-[11px] text-muted-600/60">Type</p>
+                <p class="text-lg font-semibold text-muted-600">{{ lic.drivingLicense.type }}</p>
+              </div>
+              <div>
+                <p class="text-[11px] text-muted-600/60">Points</p>
+                <p class="text-lg font-semibold text-muted-600 flex items-center gap-1">
+                  {{ lic.drivingLicense.points }}
+                </p>
+              </div>
+              <div>
+                <p class="text-[11px] text-muted-600/60">Obtained</p>
+
+                <p class="font-medium text-muted-600"> {{ lic.drivingLicense.yearObtained }}
+                  <UIcon name="lucide:badge-check" class="text-green-800 text-[15px]" />
+                </p>
+              </div>
+              <div>
+                <p class="text-[11px] text-muted-600/60">Expires</p>
+                <p class="font-medium text-muted-600"> {{ lic.drivingLicense.expirationDate }}</p>
+              </div>
+            </div>
+
+
+
+          </div>
+          <UButton class="ms-1 mt-2 cursor-pointer" color="error" icon="lucide:trash" v-if="actions.index"
+            @click="deleteLicense(lic.id)"> Delete </UButton>
+        </div> <!-- Final del card -->
+
+
+
+      </div>
+    </main>
+  </div>
 </template>
 
-<script>
+<script setup lang="ts">
+/**
+ * 
+ * @description Ejercicio 1 - Construir api de carnets
+ * - Se aplicara todo lo aprendido hasta ahora introduciendo respuestas json 
+ * - Se aplicara en el ejercicio guiado una forma de utilizar POST / GET / / DELETE desde la interfaz VUE
+ */
+/** Api  */
+
+import type { Reactive } from 'vue';
+// Helper
+import { getCountryName } from './helpers/h-pr1';
+import { type NavItem, type operations } from './helpers/h-pr1';
+
+// Formulario
+import { z } from 'zod'
+
+/** Api object */
+const { data: licenses, refresh } = await useFetch('/api/test/licenses');
+
+
+const ListNames = licenses.value?.map((p) => p.name) ?? [];
+const selectedName = ref(ListNames?.[0])
+const toast = useToast()
+
+/** Modulo Reactivo */
+const actions: Reactive<operations> = reactive({
+  index: false,
+  show: false,
+  store: false,
+});
+
+
+/** Nav Reactivo  */
+const nav: Ref<NavItem[]> = ref([
+  { id: 1, icon: 'lucide:list', color: 'warning', label: 'index' },
+  { id: 2, icon: 'lucide:eye', color: 'info', label: 'show' },
+  { id: 3, icon: 'lucide:pencil-line', color: 'primary', label: 'store' },
+])
+
+
+/** Array reactivo */
+const viewLicense = computed(() => {
+  if (actions.index) return licenses.value;
+  if (actions.show) return licenses.value?.filter(l => l.name === selectedName.value)
+
+  return [];
+})
+
+
+
+
+
+const deleteLicense = async (id: number) => {
+  await $fetch(`/api/test/${id}`, { method: 'DELETE' })
+  await refresh()
+  
+
+  toast.add({
+    title: 'Licencia eliminada',
+    color: 'success'
+  })
+}
+
+
+/** Funciones Reactivas Principales */
+const selectNav = (id: number): void => {
+
+  /** Lógica de seleccionado */
+  if (!nav.value[id]) return;
+
+  /** Mutamos la refereencia */
+  mutateRef(nav.value[id].label);
+
+  Object.entries(actions).forEach(([k, v]) => {
+    console.log(k, " - ", v);
+  })
+}
+
+/** Mutamos referencias */
+const mutateRef = (label: string): void => {
+
+  /** Que encuentra la primera itracion */
+  const currentSelect = Object.entries(actions).find(([k, v]) => v === true)?.[0]
+
+  /** Mutamos todos a falso */
+  Object.keys(actions).forEach(key => {
+    actions[key as keyof operations] = false
+  })
+
+
+  /** Filtramos el activado */
+  if (label !== currentSelect) {
+    actions[label as keyof operations] = true
+  }
+
+  console.log("Valor actual de show", actions.show)
+}
+
+
+/** Formularios */
+const schema = z.object({
+  /** Datos Personales*/
+  name: z.string().min(3, 'Minimo 3 caracteres').max(6, 'Maximo 5 caracteres'),
+  age: z.number().min(18, 'Debes ser mayor de edad'),
+  birthDate: z.date().transform(d => d.toISOString().split('T')[0]),
+  nationality: z.string().min(2, 'UN codigo debe tener minimo 2 caracteres'),
+  email: z.email('Email no valido'),
+
+  /** Datos de Ubicacion */
+  street: z.string(),
+  number: z.number(),
+  floor: z.string(),
+  city: z.string(),
+  region: z.string(),
+  zipCode: z.string(),
+  country: z.string(),
+  /** Datos de Licencia */
+  type: z.string(),
+  yearObtained: z.number(),
+  expirationDate: z.string().date(),
+  restrictions: z.array(z.string()),
+  points: z.number(),
+
+})
+
+/** Tipado del Fomrulario */
+type Schema = z.output<typeof schema>
+
+
+
+/** Estado reactivo del fomrulario */
+const FormState: Reactive<Schema> = reactive({
+  name: '',
+  age: 0,
+  birthDate: '',
+  nationality: '',
+  idNumber: '',
+  email: '',
+  phone: '',
+  street: '',
+  number: 0,
+  floor: '',
+  city: '',
+  region: '',
+  zipCode: '',
+  country: '',
+  type: '',
+  yearObtained: 0,
+  expirationDate: '',
+  restrictions: [],
+  points: 0,
+})
+
 
 </script>
-
-<style lang="scss"></style>
