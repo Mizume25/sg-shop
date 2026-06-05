@@ -25,7 +25,7 @@
 
           </div>
 
-          <!-- user -->
+          <!-- Title -->
           <div class="flex items-center gap-2 bg-[#d4a017]/15 pl-1 pr-3 py-1 rounded-full cursor-pointer">
             <div class="w-7 h-7 rounded-full bg-[#d4a017] flex items-center justify-center">
               <UIcon name="lucide:car" />
@@ -37,16 +37,16 @@
         </div>
       </nav>
 
-
+      <!--- Select Hidden -->
       <div class="flex justify-center  mt-10 mb-4 fixed top-10 left-60 right-60 z-20" v-show="actions.show">
         <USelect :items="ListNames" size="xl" class="w-full cursor-pointer" v-model="selectedName" />
       </div>
 
 
 
-
+      <!-- Primer Elemento contenedor -->
       <!-- Container grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-15 ">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-15 " v-if="actions.index || actions.show">
 
         <!-- Inicio de Card -->
         <div class="w-full rounded-xl border border-warm-600/40 overflow-hidden bg-[#e7b13c] text-sm p-6"
@@ -146,6 +146,135 @@
 
 
       </div>
+      <!-- Segundo Elemento contenedor -->
+      <!-- Contendor formulario  -->
+      <div class="w-full min-h-[460px] mt-15 ">
+
+        <div class="w-[450px] h-full bg-white border border-black rounded-2xl shadow-2xl mx-auto ">
+          <!-- Header Forulario-->
+          <div class="w-full h-[20%] flex justify-center items-center flex-row">
+            <h1 class="text-2xl p-3 text-center">Añadir una Licencia </h1>
+            <UIcon name="lucide:car" size="xl" class="text-[20px]" />
+          </div>
+
+          <!--- Body de Formulario -->
+          <div class="h-[80%] p-6 flex flex-col gap-y-4">
+            <UForm autocomplete="off" :schema="schema" :state="FormState" :validate-on="['input']" @submit="onSubmit">
+
+              <!-- Sección 1 - Datos Personales -->
+              <h2 class="ms-3 font-bold">Datos Personales</h2>
+              <div class="grid grid-cols-2 gap-x-2 gap-y-3 bg-gray-100 rounded-2xl shadow-xl border border-black mb-6">
+                <div class="flex flex-col p-2">
+                  <UFormField name="name" label="Name" :ui="{ label: 'text-black' }">
+                    <UInput size="sm" trailing-icon="lucide:pencil" v-model="FormState.name" />
+                  </UFormField>
+                </div>
+                <div class="flex flex-col p-2">
+                  <UFormField name="age" label="Age" :ui="{ label: 'text-black' }">
+                    <UInput type="number" size="sm" leading-icon="lucide:user" class="w-22" v-model="FormState.age" />
+                  </UFormField>
+                </div>
+                <div class="flex flex-col p-2">
+                  <UFormField name="birthDate" label="Birth Date" :ui="{ label: 'text-black' }">
+                    <UInput type="date" :ui="{ base: 'cursor-pointer' }" v-model="FormState.birthDate" />
+                  </UFormField>
+                </div>
+                <div class="flex flex-col p-2">
+                  <UFormField name="nationality" label="Nationality" :ui="{ label: 'text-black' }">
+                    <USelect size="sm" leading-icon="lucide:flag" class="w-42" v-model="FormState.nationality"
+                      :items="CountrieNames" />
+                  </UFormField>
+                </div>
+              </div>
+
+              <!-- Sección 2 - Contacto -->
+              <h2 class="ms-3 font-bold">Contacto</h2>
+              <div class="flex flex-col gap-y-3 bg-gray-100 rounded-2xl shadow-xl border border-black p-4 mb-8">
+
+                <div class="grid grid-cols-2 gap-x-2 gap-y-3">
+                  <div class="flex flex-col p-2">
+                    <UFormField name="email" label="Email" :ui="{ label: 'text-black' }">
+                      <UInput type="email" size="sm" trailing-icon="lucide:mail" v-model="FormState.email" />
+                    </UFormField>
+                  </div>
+                  <div class="flex flex-col p-2">
+                    <UFormField name="phone" label="Phone" :ui="{ label: 'text-black' }">
+                      <UInput type="tel" size="sm" trailing-icon="lucide:phone" v-model="FormState.phone"
+                        :ui="{ leading: 'me-3' }">
+                        <template #leading>
+                          <span class="text-sm text-gray-400 cursor-pointer w-10">{{ CountryNumber }} &nbsp;</span>
+                        </template>
+                      </UInput>
+                    </UFormField>
+                  </div>
+                </div>
+
+                <h2 class="text-sm ms-1 font-bold">Address</h2>
+                <div class="grid grid-cols-4 gap-2">
+                  <div class="flex flex-col">
+                    <UFormField name="street" label="Street" :ui="{ label: 'text-black' }">
+                      <UInput size="sm" trailing-icon="lucide:map-pin" v-model="FormState.street" />
+                    </UFormField>
+                  </div>
+                  <div class="flex flex-col">
+                    <UFormField name="number" label="Number" :ui="{ label: 'text-black' }">
+                      <UInput type="number" size="sm" trailing-icon="lucide:hash" v-model="FormState.number" />
+                    </UFormField>
+                  </div>
+                  <div class="flex flex-col">
+                    <UFormField name="floor" label="Floor" :ui="{ label: 'text-black' }">
+                      <UInput size="sm" trailing-icon="lucide:building" v-model="FormState.floor" />
+                    </UFormField>
+                  </div>
+                  <div class="flex flex-col">
+                    <UFormField name="city" label="City" :ui="{ label: 'text-black' }">
+                      <UInput size="sm" trailing-icon="lucide:building-2" v-model="FormState.city" />
+                    </UFormField>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="flex flex-col">
+                    <UFormField name="region" label="Region" :ui="{ label: 'text-black' }">
+                      <UInput size="sm" trailing-icon="lucide:map" v-model="FormState.region" />
+                    </UFormField>
+                  </div>
+                  <div class="flex flex-col">
+                    <UFormField name="zipCode" label="Zip Code" :ui="{ label: 'text-black' }">
+                      <UInput size="sm" trailing-icon="lucide:mail-open" v-model="FormState.zipCode" />
+                    </UFormField>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Sección 3 - Datos de Licencia -->
+              <h2 class="ms-3 font-bold">Datos de Licencia</h2>
+              <div
+                class="grid grid-cols-2 gap-x-2 gap-y-3 bg-gray-100 rounded-2xl shadow-xl border border-black p-4 mb-6">
+                <div class="flex flex-col p-2">
+                  <UFormField name="type" label="Type" :ui="{ label: 'text-black' }">
+                    <USelect size="sm" :trailing-icon="iconV()" :items="drivingLicenseTypes" v-model="FormState.type" />
+                  </UFormField>
+                </div>
+                <div class="flex flex-col p-2">
+                  <UFormField name="expirationDate" label="Fecha Expiración" :ui="{ label: 'text-black' }">
+                    <UInput type="date" :ui="{ base: 'cursor-pointer' }" v-model="FormState.expirationDate" />
+                  </UFormField>
+                </div>
+                <div class="flex flex-col p-2">
+                  <UFormField name="yearObtained" label="Año de Expedición" :ui="{ label: 'text-black' }">
+                    <UInput type="number" min="1900" :max="new Date().getFullYear()" v-model="FormState.yearObtained" />
+                  </UFormField>
+                </div>
+              </div>
+
+              <UButton type="submit" class="cursor-pointer" @click="testSchema">Enviar</UButton>
+            </UForm>
+          </div>
+
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -161,17 +290,21 @@
 
 import type { Reactive } from 'vue';
 // Helper
-import { getCountryName } from './helpers/h-pr1';
-import { type NavItem, type operations } from './helpers/h-pr1';
+import { getCountriesNames, getCountryName, getPhoneCodeByCountry, getCountryCode } from './helpers/h-pr1';
+import { type NavItem, type operations } from '../../../types/tests';
+import { drivingLicenseTypes } from './helpers/h-pr1';
 
 // Formulario
 import { z } from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui'
 
 /** Api object */
 const { data: licenses, refresh } = await useFetch('/api/test/licenses');
 
 
 const ListNames = licenses.value?.map((p) => p.name) ?? [];
+
+
 const selectedName = ref(ListNames?.[0])
 const toast = useToast()
 
@@ -181,6 +314,11 @@ const actions: Reactive<operations> = reactive({
   show: false,
   store: false,
 });
+
+
+/** Lista de Paises Ractivos */
+const CountrieNames: Ref<string[]> = ref(getCountriesNames());
+
 
 
 /** Nav Reactivo  */
@@ -206,7 +344,6 @@ const viewLicense = computed(() => {
 const deleteLicense = async (id: number) => {
   await $fetch(`/api/test/${id}`, { method: 'DELETE' })
   await refresh()
-  
 
   toast.add({
     title: 'Licencia eliminada',
@@ -253,26 +390,23 @@ const mutateRef = (label: string): void => {
 /** Formularios */
 const schema = z.object({
   /** Datos Personales*/
-  name: z.string().min(3, 'Minimo 3 caracteres').max(6, 'Maximo 5 caracteres'),
+  name: z.string().min(3, 'Minimo 3 caracteres').max(50, 'Maximo 50 caracteres'),
   age: z.number().min(18, 'Debes ser mayor de edad'),
-  birthDate: z.date().transform(d => d.toISOString().split('T')[0]),
-  nationality: z.string().min(2, 'UN codigo debe tener minimo 2 caracteres'),
+  birthDate: z.string().date(),
+  nationality: z.string().min(1, 'Campo obligatorio'),
   email: z.email('Email no valido'),
-
+  phone: z.string(),
   /** Datos de Ubicacion */
-  street: z.string(),
+  street: z.string().min(1, 'Campo Obligatorio'),
   number: z.number(),
-  floor: z.string(),
-  city: z.string(),
-  region: z.string(),
-  zipCode: z.string(),
-  country: z.string(),
+  floor: z.string().min(1, 'Campo Obligatorio'),
+  city: z.string().min(1, 'Campo Obligatorio'),
+  region: z.string().min(1, 'Campo Obligatorio'),
+  zipCode: z.string().min(1, 'Campo Obligatorio'),
   /** Datos de Licencia */
-  type: z.string(),
+  type: z.enum(drivingLicenseTypes as [string, ...string[]]),
   yearObtained: z.number(),
   expirationDate: z.string().date(),
-  restrictions: z.array(z.string()),
-  points: z.number(),
 
 })
 
@@ -284,10 +418,9 @@ type Schema = z.output<typeof schema>
 /** Estado reactivo del fomrulario */
 const FormState: Reactive<Schema> = reactive({
   name: '',
-  age: 0,
+  age: 20,
   birthDate: '',
-  nationality: '',
-  idNumber: '',
+  nationality: 'España',
   email: '',
   phone: '',
   street: '',
@@ -296,13 +429,63 @@ const FormState: Reactive<Schema> = reactive({
   city: '',
   region: '',
   zipCode: '',
-  country: '',
-  type: '',
-  yearObtained: 0,
+  type: 'B',
+  yearObtained: 2000,
   expirationDate: '',
-  restrictions: [],
-  points: 0,
 })
+
+const CountryNumber: ComputedRef<string> = computed(() => getPhoneCodeByCountry(getCountryCode(FormState.nationality)))
+
+/** Dinamizacion de iconos */
+const iconV = (): string => {
+  switch (FormState.type) {
+    case 'AM':
+    case 'A1':
+    case 'A2':
+    case 'A':
+      return 'lucide:motorbike';
+    case 'C1':
+    case 'C':
+    case 'D1':
+    case 'D':
+    case 'BE':
+    case 'CE':
+      return 'lucide:truck';
+    default: 'B'
+      return 'lucide:car'
+  }
+}
+
+const onSubmit = (e: FormSubmitEvent<Schema>) => {
+  console.log("Hola", e.data)
+  cleanContent()
+}
+
+const testSchema = () => {
+  const result = schema.safeParse(FormState)
+  console.log(result)
+}
+
+
+const cleanContent = () => {
+  Object.assign(FormState, {
+    name: '',
+    age: 20,
+    birthDate: '',
+    nationality: 'España',
+    email: '',
+    phone: '',
+    street: '',
+    number: 0,
+    floor: '',
+    city: '',
+    region: '',
+    zipCode: '',
+    type: 'B',
+    yearObtained: 2000,
+    expirationDate: '',
+  })
+}
 
 
 </script>

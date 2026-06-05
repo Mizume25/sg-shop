@@ -23,7 +23,6 @@
       "type": "B",
       "yearObtained": 2010,
       "expirationDate": "2030-03-15",
-      "restrictions": [],
       "points": 12
     }
   },
@@ -51,7 +50,6 @@
       "type": "A",
       "yearObtained": 2018,
       "expirationDate": "2028-07-22",
-      "restrictions": ["gafas"],
       "points": 10
     }
   },
@@ -79,7 +77,6 @@
       "type": "C",
       "yearObtained": 2001,
       "expirationDate": "2026-11-03",
-      "restrictions": [],
       "points": 6
     }
   },
@@ -107,7 +104,6 @@
       "type": "B",
       "yearObtained": 2013,
       "expirationDate": "2033-02-17",
-      "restrictions": ["lentes"],
       "points": 12
     }
   },
@@ -135,7 +131,6 @@
       "type": "D",
       "yearObtained": 1995,
       "expirationDate": "2027-05-09",
-      "restrictions": [],
       "points": 8
     }
   },
@@ -163,7 +158,6 @@
       "type": "B",
       "yearObtained": 2020,
       "expirationDate": "2030-09-30",
-      "restrictions": ["automático"],
       "points": 12
 
     }
@@ -192,7 +186,6 @@
       "type": "B",
       "yearObtained": 2008,
       "expirationDate": "2028-12-01",
-      "restrictions": [],
       "points": 10
      
     }
@@ -221,7 +214,6 @@
       "type": "B",
       "yearObtained": 2004,
       "expirationDate": "2024-04-25",
-      "restrictions": ["gafas"],
       "points": 4
     }
   },
@@ -249,7 +241,6 @@
       "type": "B",
       "yearObtained": 1999,
       "expirationDate": "2029-08-11",
-      "restrictions": [],
       "points": 12
     }
   },
@@ -277,7 +268,6 @@
       "type": "B",
       "yearObtained": 2022,
       "expirationDate": "2032-01-14",
-      "restrictions": [],
       "points": 12
     }
   },
@@ -305,7 +295,6 @@
       "type": "C",
       "yearObtained": 1987,
       "expirationDate": "2026-06-30",
-      "restrictions": ["audífono"],
       "points": 9
     }
   }

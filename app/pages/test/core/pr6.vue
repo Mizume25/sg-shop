@@ -62,7 +62,7 @@
                         <p class="text-sm text-gray-500">{{ item.description }}</p>
                         <p class="text-sm text-gray-500">{{ new Date(item.date).toLocaleDateString() }}</p>
                         <div class="flex flex-row gap-3 justify-between">
-                            <UBadge :label="item.type" variant="solid" size="sm" class="w-[80px] capitalize text-[15px]"
+                            <UBadge :label="item.type" variant="solid" size="sm" class="w-20 capitalize text-[15px]"
                                 :color="item.color" />
                             <UBadge :icon="item.completed ? 'lucide:check' : 'i-lucide-x'"
                                 :color="item.completed ? 'primary' : 'error'" variant="solid" size="xl"
@@ -105,6 +105,9 @@ const items = ref<Card[]>([
     { id: 6, task: 'Estiramientos mañana', type: 'ejercicio', completed: false, icon: 'i-lucide-dumbbell', description: '15 minutos', date: '03-06-2026', color: 'primary' },
     { id: 7, task: 'Leer novela', type: 'ocio', completed: true, icon: 'i-lucide-gamepad', description: '20 páginas mínimo', date: '03-06-2026', color: 'error' }
 ])
+
+
+
 
 /**
  * 
