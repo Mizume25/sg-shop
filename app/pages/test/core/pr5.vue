@@ -16,7 +16,7 @@
 
  /** Reference */
 const seg : Ref<number> = ref(0);
-const interval :  Ref<number>= ref(0)
+const interval= ref<ReturnType<typeof setInterval>>()
 
 /** Una vez montada la página */
 onMounted(() => {
