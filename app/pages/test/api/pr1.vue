@@ -51,7 +51,7 @@
         <!-- Inicio de Card -->
         <div class="w-full rounded-xl border border-warm-600/40 overflow-hidden bg-[#e7b13c] text-sm p-6"
           :class="actions.show ? 'mt-15' : ''" v-show="actions.index || actions.show"
-          v-for="(lic, index) in viewLicense" :key="lic.id">
+          v-for="lic in viewLicense" :key="lic.id">
 
           <!-- Foto de Perfil-->
           <div class="px-5 py-5 text-center ">
@@ -148,7 +148,7 @@
       </div>
       <!-- Segundo Elemento contenedor -->
       <!-- Contendor formulario  -->
-      <div class="w-full min-h-[460px] mt-15 ">
+      <div class="w-full min-h-[460px] mt-15" v-if="actions.store">
 
         <div class="w-[450px] h-full bg-white border border-black rounded-2xl shadow-2xl mx-auto ">
           <!-- Header Forulario-->
@@ -254,7 +254,7 @@
                 class="grid grid-cols-2 gap-x-2 gap-y-3 bg-gray-100 rounded-2xl shadow-xl border border-black p-4 mb-6">
                 <div class="flex flex-col p-2">
                   <UFormField name="type" label="Type" :ui="{ label: 'text-black' }">
-                    <USelect size="sm" :trailing-icon="iconV()" :items="drivingLicenseTypes" v-model="FormState.type" />
+                    <USelect size="sm" :trailing-icon="iconV()" :items="drivingLicenseTypes" v-model="FormState.type"  class="w-26"/>
                   </UFormField>
                 </div>
                 <div class="flex flex-col p-2">
@@ -269,7 +269,7 @@
                 </div>
               </div>
 
-              <UButton type="submit" class="cursor-pointer" @click="testSchema">Enviar</UButton>
+              <UButton type="submit" class="cursor-pointer">Enviar</UButton>
             </UForm>
           </div>
 
@@ -284,58 +284,29 @@
  * 
  * @description Ejercicio 1 - Construir api de carnets
  * - Se aplicara todo lo aprendido hasta ahora introduciendo respuestas json 
- * - Se aplicara en el ejercicio guiado una forma de utilizar POST / GET / / DELETE desde la interfaz VUE
+ * - Se aplicara en el ejercicio guiado una forma de utilizar POST / GET / Delte desde la interfaz VUE
  */
-/** Api  */
 
-import type { Reactive } from 'vue';
+
+
 // Helper
-import { getCountriesNames, getCountryName, getPhoneCodeByCountry, getCountryCode } from './helpers/h-pr1';
-import { type NavItem, type operations } from '../../../types/tests';
+import type { License } from '~/types/tests';
+import { getCountryCode, getCountryName , schema } from './helpers/h-pr1';
 import { drivingLicenseTypes } from './helpers/h-pr1';
-
-// Formulario
-import { z } from 'zod'
+import type { Schema } from './helpers/h-pr1';
 import type { FormSubmitEvent } from '@nuxt/ui'
+import { da } from 'zod/locales';
+
 
 /** Api object */
 const { data: licenses, refresh } = await useFetch('/api/test/licenses');
 
+/** Composables */
+const { nav, actions, viewLicense, selectedName, ListNames, selectNav } = useLicenses(licenses)
 
-const ListNames = licenses.value?.map((p) => p.name) ?? [];
+const { CountrieNames, FormState, CountryNumber, iconV, cleanContent } = useLicensesForm();
 
-
-const selectedName = ref(ListNames?.[0])
 const toast = useToast()
-
-/** Modulo Reactivo */
-const actions: Reactive<operations> = reactive({
-  index: false,
-  show: false,
-  store: false,
-});
-
-
-/** Lista de Paises Ractivos */
-const CountrieNames: Ref<string[]> = ref(getCountriesNames());
-
-
-
-/** Nav Reactivo  */
-const nav: Ref<NavItem[]> = ref([
-  { id: 1, icon: 'lucide:list', color: 'warning', label: 'index' },
-  { id: 2, icon: 'lucide:eye', color: 'info', label: 'show' },
-  { id: 3, icon: 'lucide:pencil-line', color: 'primary', label: 'store' },
-])
-
-
-/** Array reactivo */
-const viewLicense = computed(() => {
-  if (actions.index) return licenses.value;
-  if (actions.show) return licenses.value?.filter(l => l.name === selectedName.value)
-
-  return [];
-})
 
 
 
@@ -352,140 +323,62 @@ const deleteLicense = async (id: number) => {
 }
 
 
-/** Funciones Reactivas Principales */
-const selectNav = (id: number): void => {
+const onSubmit = async (e: FormSubmitEvent<Schema>) => {
 
-  /** Lógica de seleccionado */
-  if (!nav.value[id]) return;
+  const newID = (licenses.value?.at(-1)?.id ?? 0) + 1;
+  const numbers = (Math.floor(Math.random() * 10) + 1).toString();
+  const code = getCountryCode(e.data.nationality);
+  /** Añadir datos que le faltan */
+  const data = {
+    ...e.data,
+    id: newID,
+    nationality: code,
+    idNumber: code + '-' +  numbers,
+    points: 12
 
-  /** Mutamos la refereencia */
-  mutateRef(nav.value[id].label);
-
-  Object.entries(actions).forEach(([k, v]) => {
-    console.log(k, " - ", v);
-  })
-}
-
-/** Mutamos referencias */
-const mutateRef = (label: string): void => {
-
-  /** Que encuentra la primera itracion */
-  const currentSelect = Object.entries(actions).find(([k, v]) => v === true)?.[0]
-
-  /** Mutamos todos a falso */
-  Object.keys(actions).forEach(key => {
-    actions[key as keyof operations] = false
-  })
-
-
-  /** Filtramos el activado */
-  if (label !== currentSelect) {
-    actions[label as keyof operations] = true
   }
 
-  console.log("Valor actual de show", actions.show)
-}
+  const License : License = {
+    id: data.id,
+    name:data.name,
+    age: data.age,
+    birthDate: data.birthDate,
+    nationality: data.nationality,
+    idNumber: data.idNumber,
+    contact: {
+      email: data.email,
+      phone: data.phone
+    },
+    address: {
+      street: data.street,
+      number: data.number,
+      floor: data.floor,
+      city: data.city,
+      region: data.region,
+      zipCode: data.zipCode,
 
+    },
+    drivingLicense : {
+      type: data.type,
+      yearObtained: data.yearObtained,
+      expirationDate: data.expirationDate,
+      points: data.points
+    }
 
-/** Formularios */
-const schema = z.object({
-  /** Datos Personales*/
-  name: z.string().min(3, 'Minimo 3 caracteres').max(50, 'Maximo 50 caracteres'),
-  age: z.number().min(18, 'Debes ser mayor de edad'),
-  birthDate: z.string().date(),
-  nationality: z.string().min(1, 'Campo obligatorio'),
-  email: z.email('Email no valido'),
-  phone: z.string(),
-  /** Datos de Ubicacion */
-  street: z.string().min(1, 'Campo Obligatorio'),
-  number: z.number(),
-  floor: z.string().min(1, 'Campo Obligatorio'),
-  city: z.string().min(1, 'Campo Obligatorio'),
-  region: z.string().min(1, 'Campo Obligatorio'),
-  zipCode: z.string().min(1, 'Campo Obligatorio'),
-  /** Datos de Licencia */
-  type: z.enum(drivingLicenseTypes as [string, ...string[]]),
-  yearObtained: z.number(),
-  expirationDate: z.string().date(),
-
-})
-
-/** Tipado del Fomrulario */
-type Schema = z.output<typeof schema>
-
-
-
-/** Estado reactivo del fomrulario */
-const FormState: Reactive<Schema> = reactive({
-  name: '',
-  age: 20,
-  birthDate: '',
-  nationality: 'España',
-  email: '',
-  phone: '',
-  street: '',
-  number: 0,
-  floor: '',
-  city: '',
-  region: '',
-  zipCode: '',
-  type: 'B',
-  yearObtained: 2000,
-  expirationDate: '',
-})
-
-const CountryNumber: ComputedRef<string> = computed(() => getPhoneCodeByCountry(getCountryCode(FormState.nationality)))
-
-/** Dinamizacion de iconos */
-const iconV = (): string => {
-  switch (FormState.type) {
-    case 'AM':
-    case 'A1':
-    case 'A2':
-    case 'A':
-      return 'lucide:motorbike';
-    case 'C1':
-    case 'C':
-    case 'D1':
-    case 'D':
-    case 'BE':
-    case 'CE':
-      return 'lucide:truck';
-    default: 'B'
-      return 'lucide:car'
   }
-}
 
-const onSubmit = (e: FormSubmitEvent<Schema>) => {
-  console.log("Hola", e.data)
+  await $fetch('/api/test/license', { method: 'POST', body: License })
+  await refresh()
+  toast.add({ title: 'Licencia añadida', color: 'success' })
   cleanContent()
 }
 
-const testSchema = () => {
-  const result = schema.safeParse(FormState)
-  console.log(result)
-}
 
 
-const cleanContent = () => {
-  Object.assign(FormState, {
-    name: '',
-    age: 20,
-    birthDate: '',
-    nationality: 'España',
-    email: '',
-    phone: '',
-    street: '',
-    number: 0,
-    floor: '',
-    city: '',
-    region: '',
-    zipCode: '',
-    type: 'B',
-    yearObtained: 2000,
-    expirationDate: '',
-  })
-}
+
+
+
+
 
 
 </script>

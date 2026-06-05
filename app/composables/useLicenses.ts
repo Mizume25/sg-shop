@@ -1,23 +1,21 @@
 /**
- * Archivo para poder obtener un CRUD completo de Licencias
+ * Archivo para poder obtener un CRUD parcial de Licencias
  */
 import type { Reactive } from 'vue';
 import { type NavItem, type operations, type License } from '../types/tests';
-
+import type { SerializeObject } from 'nitropack'
 
 /** Valores reactivos llevados */
-export const useLicenses = (licenses: Ref<License[] | null>) => {
+export const useLicenses = (licenses: Ref<SerializeObject<License>[] | null | undefined>) => {
 
 
 
     /** Valores  */
-
-    /** Licencias */
     const ListNames = computed(() => licenses.value?.map((p) => p.name) ?? [])
 
     /** Referencias */
 
-    
+
     /** Licencia Selecionada */
     const selectedName: Ref<string | undefined> = ref(ListNames.value?.[0]);
 
@@ -103,8 +101,7 @@ export const useLicenses = (licenses: Ref<License[] | null>) => {
         viewLicense,
         selectedName,
         ListNames,
-        selectNav,
-        mutateRef
+        selectNav
     }
 
 

@@ -4,6 +4,8 @@
 import countries from 'i18n-iso-countries'
 import es from 'i18n-iso-countries/langs/es.json'
 import { getCountries, getCountryCallingCode } from 'libphonenumber-js'
+import { z } from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui'
 
 
 
@@ -71,3 +73,30 @@ export const getPhoneCodes = (): string[] => {
 export const getPhoneCodeByCountry = (code: string): string => {
   return `+${getCountryCallingCode(code as any)}`
 }
+
+/** Formulario */
+/** Formularios */
+export const schema = z.object({
+        /** Datos Personales*/
+        name: z.string().min(3, 'Minimo 3 caracteres').max(50, 'Maximo 50 caracteres'),
+        age: z.number().min(18, 'Debes ser mayor de edad'),
+        birthDate: z.string().date(),
+        nationality: z.string().min(1, 'Campo obligatorio'),
+        email: z.email('Email no valido'),
+        phone: z.string(),
+        /** Datos de Ubicacion */
+        street: z.string().min(1, 'Campo Obligatorio'),
+        number: z.number(),
+        floor: z.string().min(1, 'Campo Obligatorio'),
+        city: z.string().min(1, 'Campo Obligatorio'),
+        region: z.string().min(1, 'Campo Obligatorio'),
+        zipCode: z.string().min(1, 'Campo Obligatorio'),
+        /** Datos de Licencia */
+        type: z.enum(drivingLicenseTypes as [string, ...string[]]),
+        yearObtained: z.number(),
+        expirationDate: z.string().date(),
+
+    })
+
+    /** Tipado del Fomrulario */
+export type Schema = z.output<typeof schema>
