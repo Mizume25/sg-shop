@@ -13,6 +13,25 @@ const props = withDefaults(defineProps<{
     sectionColor: 'bg-[#e0c58a]'
 })
 
+
+/**
+ * Ejercicio 2 - Consturir emits
+ */
+
+ /** Sin tipado */
+ //const emit = defineEmits(['saludar']);
+
+ // Con Tipado
+ const emit = defineEmits<{
+    saludar: [data: { name: string , age:number }]
+ }>();
+
+ /** Funcion Prubea */
+ const greetings = () => {
+    emit('saludar', { name: props.license.name , age: props.license.age }); 
+}
+
+
 </script>
 <template>
     <div class="rounded-xl border border-warm-600/40 overflow-hidden text-sm p-6" :class="{bgColor}">
@@ -102,7 +121,7 @@ const props = withDefaults(defineProps<{
                 </div>
             </div>
 
-
+            <UButton   @click="greetings" > Saludar</UButton>
 
         </div>
     </div> <!-- Final del card -->

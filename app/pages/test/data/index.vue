@@ -10,6 +10,7 @@ interface FieldItem {
 /** Integrar campos */
 const items: FieldItem[] = [
     { id: 1, to: "/test/data/pr1" },
+    { id: 2, to: "/test/data/pr2" },
 ]
 </script>
 

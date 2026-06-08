@@ -1,8 +1,9 @@
 <template>
     <div class="w-full h-screen">
-        <div class="w-[1200px] h-[480px]">
+        <div class="grid grid-cols-2 ">
             
-            <LicenceCard v-if="licenseData" :license=licenseData     />
+            <LicenceCard v-if="licenseData" :license=licenseData />
+            <LicenceCard v-if="licenseData" :license=licenseData   @saludar="recive"  />
         </div>
     </div>
 
@@ -15,6 +16,10 @@
 
 const { data:license }= await useFetch(`/api/test/${1}`);
 const licenseData = computed(() => license.value)
+
+const recive = (datos : { name: string , age: number}) => {
+    console.log(datos.name , ' te esta hablando para decirte que tiene , ' , datos.age );
+}
 
 </script>
 
