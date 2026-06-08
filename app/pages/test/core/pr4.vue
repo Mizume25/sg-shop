@@ -39,7 +39,7 @@ const removeLastItem = () => {
         <!--- Panel Control-->
         <div
             class="w-[250px] h-[390px] mx-auto border-black border mt-0 rounded-xl text-center flex flex-col gap-3 bg-[#a3cbcc] items-center justify-center ">
-            <header class="w-full h-[10px] mt-3 p-2 text-white font-blod text-[25px]"> Panel Control</header>
+            <header class="w-full h-2.5 mt-3 p-2 text-white font-blod text-[25px]"> Panel Control</header>
             <section class="w-full h-full flex flex-col  justify-center items-center p-6 -mt-20">
                 <!--- Input -->
                 <section class="w-full h-25">

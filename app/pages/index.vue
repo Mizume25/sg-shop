@@ -9,7 +9,7 @@ definePageMeta({
         <UButton 
         variant="solid" 
         color="error" 
-        class="w-[160px] h-[60px] text-[25px] text-white font-blod p-4 text-center  transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
+        class="w-40 h-[60px] text-[25px] text-white font-blod p-4 text-center  transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
         icon="lucide:shopping-cart"
         to="/home"
         >
@@ -20,7 +20,7 @@ definePageMeta({
         to="/test"
         variant="solid" 
         color="primary" 
-        class="w-[160px] h-[60px] text-[25px] text-white font-blod p-4 text-center transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
+        class="w-40 h-[60px] text-[25px] text-white font-blod p-4 text-center transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer" 
         icon="lucide-book">
             Practicas
         </UButton>
